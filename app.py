@@ -19,6 +19,9 @@ app = Flask(__name__)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY")) # Use os.getenv to safely retrieve from .env
 
 
+@app.route('/test')
+def test():
+    return "hello shravan"
 
 @app.route('/process_image', methods=['POST'])
 def process_image():
